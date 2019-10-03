@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29319.158
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagram Checker API", "Anagram Checker\Anagram Checker API.csproj", "{FF3EF7A2-F8EA-4EFD-AE4B-47D394E2FBF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagram Checker Lib", "Anagram Checker Lib\Anagram Checker Lib.csproj", "{8AA079FE-37F6-4C75-8DB8-1EB0D4C20360}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagram Checker Console App", "Anagram Checker Console App\Anagram Checker Console App.csproj", "{1FB875D2-D983-4514-9A05-933AA97FD538}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF3EF7A2-F8EA-4EFD-AE4B-47D394E2FBF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF3EF7A2-F8EA-4EFD-AE4B-47D394E2FBF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF3EF7A2-F8EA-4EFD-AE4B-47D394E2FBF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF3EF7A2-F8EA-4EFD-AE4B-47D394E2FBF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AA079FE-37F6-4C75-8DB8-1EB0D4C20360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AA079FE-37F6-4C75-8DB8-1EB0D4C20360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AA079FE-37F6-4C75-8DB8-1EB0D4C20360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AA079FE-37F6-4C75-8DB8-1EB0D4C20360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FB875D2-D983-4514-9A05-933AA97FD538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FB875D2-D983-4514-9A05-933AA97FD538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FB875D2-D983-4514-9A05-933AA97FD538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FB875D2-D983-4514-9A05-933AA97FD538}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF6FEE43-895D-4ADB-AFEB-649426174294}
+	EndGlobalSection
+EndGlobal
