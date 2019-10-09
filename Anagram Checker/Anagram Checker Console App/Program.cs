@@ -8,7 +8,39 @@ namespace Anagram_Checker
         static void Main(string[] args)
         {
             AnagramCheckerLib agLib = new AnagramCheckerLib(@"Dict.csv");
-            //TODO args
+            if (args[0].Equals("check"))
+            {
+                if (args.Length == 3)
+                {
+                    CheckAnagram(agLib, args[1], args[2]);
+                } else
+                {
+                    Console.WriteLine("Use 'check' 'word1' 'word2'");
+                }
+            } else if(args[0].Equals("getKnown"))
+            {
+                if (args.Length == 2)
+                {
+                    GetKnownAnagram(agLib, args[1]);
+                }
+                else
+                {
+                    Console.WriteLine("Use 'getKnown' 'word'");
+                }
+            } else if (args[0].Equals("getPermutations"))
+            {
+                if (args.Length == 2)
+                {
+                    GenAnagrams(agLib, args[1]);
+                }
+                else
+                {
+                    Console.WriteLine("Use 'getPermutations' 'word'");
+                }
+            } else
+            {
+                Console.WriteLine("Use 'getPermutations' || 'getKnown' || 'check'");
+            }
         }
 
         public static void CheckAnagram(AnagramCheckerLib agLib, string w1, string w2)
