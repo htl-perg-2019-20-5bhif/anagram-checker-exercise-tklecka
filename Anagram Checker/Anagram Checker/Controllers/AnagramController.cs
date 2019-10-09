@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -7,28 +8,41 @@ using Microsoft.Extensions.Logging;
 
 namespace Anagram_Checker.Controllers
 {
+    public class Word
+    {
+        [Required]
+        public string W1 { get; set; }
+
+        [Required]
+        public string W2 { get; set; }
+    }
+
     [ApiController]
     [Route("[controller]")]
     public class AnagramController : ControllerBase
     {
+        private readonly IAnagramChecker agLib;
+        private readonly ILogger<AnagramController> logger;
+
+        public AnagramController(IAnagramChecker agLib, ILogger<AnagramController> logger)
+        {
+            this.agLib = agLib;
+            this.logger = logger;
+        }
+
         [HttpGet]
         [Route("/api/checkAnagram")]
-        public ActionResult<string> GetCheckAnagrams([FromBody]string w1)
+        public ActionResult<string> GetCheckAnagrams([FromBody]Word w)
         {
-            string w2 = "asd";
-            if (w1.Equals(String.Empty) || w2.Equals(String.Empty))
+            if (w.W1.Equals(String.Empty) || w.W2.Equals(String.Empty))
             {
                 return BadRequest();
             }
-            AnagramCheckerLib agLib = new AnagramCheckerLib(@"../Dict.csv");
-            if (agLib.CheckAnagram(w1, w2))
+            if (agLib.CheckAnagram(w.W1, w.W2))
             {
                 return Ok();
             }
-            else
-            {
-                return BadRequest();
-            }
+            return BadRequest();
         }
 
         [HttpGet]
@@ -39,10 +53,10 @@ namespace Anagram_Checker.Controllers
             {
                 return BadRequest();
             }
-            AnagramCheckerLib agLib = new AnagramCheckerLib(@"../Dict.csv");
             Anagram anagram = agLib.GetKnownAnagram(w);
             if (anagram == null)
             {
+                logger.LogWarning("No anagrams found for " + w);
                 return NotFound();
             }
             else
@@ -59,7 +73,6 @@ namespace Anagram_Checker.Controllers
             {
                 return BadRequest();
             }
-            AnagramCheckerLib agLib = new AnagramCheckerLib(@"../Dict.csv");
             IEnumerable<string> anagrams = agLib.GeneratePermutations(w);
             if (anagrams != null)
             {

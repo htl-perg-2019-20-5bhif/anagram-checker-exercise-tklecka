@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Anagram_Checker
 {
-    public class AnagramCheckerLib
+    public class AnagramCheckerLib : IAnagramChecker
     {
         List<Anagram> dict = new List<Anagram>();
         private readonly string dictfilename;
@@ -70,15 +70,22 @@ namespace Anagram_Checker
 
         private async void GetAnagramsFromDictionaryAsync()
         {
-        string dictionary = await ReadDictAsync();
-            string[] anagrams = dictionary.Replace("\r", string.Empty).Split("\n");
-            foreach (string pair in anagrams)
+            try
             {
-                string[] anagramsSplited = pair.Split(";");
-                if (anagramsSplited.Length >= 2)
+                string dictionary = await ReadDictAsync();
+                string[] anagrams = dictionary.Replace("\r", string.Empty).Split("\n");
+                foreach (string pair in anagrams)
                 {
-                    dict.Add(new Anagram(anagramsSplited[0], anagramsSplited[1]));
+                    string[] anagramsSplited = pair.Split(";");
+                    if (anagramsSplited.Length >= 2)
+                    {
+                        dict.Add(new Anagram(anagramsSplited[0], anagramsSplited[1]));
+                    }
                 }
+            }
+            catch (System.IO.FileNotFoundException ex)
+            {
+                throw (ex);
             }
         }
 
