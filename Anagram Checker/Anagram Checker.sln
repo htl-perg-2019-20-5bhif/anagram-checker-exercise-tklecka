@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anagram Checker Lib", "Anag
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anagram Checker Console App", "Anagram Checker Console App\Anagram Checker Console App.csproj", "{1FB875D2-D983-4514-9A05-933AA97FD538}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagram Checker LibTests", "Anagram Checker LibTests\Anagram Checker LibTests.csproj", "{41E03253-3041-44EB-A3AE-36C4B6D9AB21}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{1FB875D2-D983-4514-9A05-933AA97FD538}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FB875D2-D983-4514-9A05-933AA97FD538}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FB875D2-D983-4514-9A05-933AA97FD538}.Release|Any CPU.Build.0 = Release|Any CPU
-		{41E03253-3041-44EB-A3AE-36C4B6D9AB21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{41E03253-3041-44EB-A3AE-36C4B6D9AB21}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{41E03253-3041-44EB-A3AE-36C4B6D9AB21}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{41E03253-3041-44EB-A3AE-36C4B6D9AB21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

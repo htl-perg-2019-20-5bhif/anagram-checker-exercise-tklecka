@@ -6,4 +6,8 @@
     <RootNamespace>Anagram_Checker_Console_App</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Anagram Checker Lib\Anagram Checker Lib.csproj" />
+  </ItemGroup>
+
 </Project>

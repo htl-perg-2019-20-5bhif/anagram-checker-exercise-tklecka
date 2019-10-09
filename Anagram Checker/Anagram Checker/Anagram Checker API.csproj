@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Anagram Checker Lib\Anagram Checker Lib.csproj" />
   </ItemGroup>
 
 </Project>
