@@ -7,8 +7,8 @@ namespace Anagram_Checker
 {
     public class AnagramCheckerLib
     {
+        List<Anagram> dict = new List<Anagram>();
         private readonly string dictfilename;
-        private List<Anagram> dict;
         public AnagramCheckerLib(string dictfilename)
         {
             this.dictfilename = dictfilename;
@@ -42,7 +42,7 @@ namespace Anagram_Checker
 
         public Anagram GetKnownAnagram(string word)
         {
-            GetAnagramsFromDictionary();
+            GetAnagramsFromDictionaryAsync();
             foreach (Anagram anagram in dict)
             {
                 if (anagram.W1.ToLower().Equals(word.ToLower()) || anagram.W2.ToLower().Equals(word.ToLower()))
@@ -68,16 +68,16 @@ namespace Anagram_Checker
             return dictContent;
         }
 
-        private async void GetAnagramsFromDictionary()
+        private async void GetAnagramsFromDictionaryAsync()
         {
-            string dictionary = await ReadDictAsync();
+        string dictionary = await ReadDictAsync();
             string[] anagrams = dictionary.Replace("\r", string.Empty).Split("\n");
             foreach (string pair in anagrams)
             {
                 string[] anagramsSplited = pair.Split(";");
-                if (anagrams.Length >= 2)
+                if (anagramsSplited.Length >= 2)
                 {
-                    dict.Add(new Anagram(anagrams[0], anagrams[1]));
+                    dict.Add(new Anagram(anagramsSplited[0], anagramsSplited[1]));
                 }
             }
         }
