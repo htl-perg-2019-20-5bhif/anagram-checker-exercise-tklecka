@@ -8,7 +8,7 @@ namespace Anagram_Checker
     public class AnagramCheckerLib : IAnagramChecker
     {
         List<Anagram> dict = new List<Anagram>();
-        private readonly string dictfilename;
+        public string dictfilename { get; set; }
         public AnagramCheckerLib(string dictfilename)
         {
             this.dictfilename = dictfilename;

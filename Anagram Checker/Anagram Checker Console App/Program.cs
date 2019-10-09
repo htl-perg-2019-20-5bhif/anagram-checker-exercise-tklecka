@@ -7,7 +7,7 @@ namespace Anagram_Checker
     {
         static void Main(string[] args)
         {
-            AnagramCheckerLib agLib = new AnagramCheckerLib(@"Dict.csv");
+            AnagramCheckerLib agLib = new AnagramCheckerLib("");
             if (args[0].Equals("check"))
             {
                 if (args.Length == 3)
@@ -19,13 +19,14 @@ namespace Anagram_Checker
                 }
             } else if(args[0].Equals("getKnown"))
             {
-                if (args.Length == 2)
+                if (args.Length == 3)
                 {
-                    GetKnownAnagram(agLib, args[1]);
+                    agLib.dictfilename = args[1];
+                    GetKnownAnagram(agLib, args[2]);
                 }
                 else
                 {
-                    Console.WriteLine("Use 'getKnown' 'word'");
+                    Console.WriteLine("Use 'getKnown' 'Path' 'word'");
                 }
             } else if (args[0].Equals("getPermutations"))
             {
